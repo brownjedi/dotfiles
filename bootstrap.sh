@@ -14,6 +14,7 @@ function doIt() {
 		--exclude "postinstall.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
+	env zsh -l;
 	source ~/.zshrc;
 }
 
