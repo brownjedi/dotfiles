@@ -27,25 +27,23 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
 # Install zsh.
 brew install zsh
 
-# Switch to using brew-installed bash as default shell
+# Switch to using brew-installed zsh as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
   echo "${BREW_PREFIX}/bin/zsh" | sudo tee -a /etc/shells;
   chsh -s "${BREW_PREFIX}/bin/zsh";
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install screen
@@ -59,12 +57,12 @@ brew install sqlmap
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
-brew install git --without-completions
+brew install git
 brew install git-lfs
 brew install git-flow
 brew install git-extras
 brew install diff-so-fancy
-brew install imagemagick --with-webp
+brew install imagemagick
 brew install lua
 brew install pv
 brew install rename
@@ -78,7 +76,9 @@ brew install lolcat
 brew install thefuck
 brew install ctags
 brew install libvpx
-brew install ffmpeg --with-libvpx
+brew install fortune
+brew install cowthink
+brew install ffmpeg
 
 
 # install programming env
@@ -88,7 +88,7 @@ brew install go
 
 # node
 brew install nvm
-brew install yarn --ignore-dependencies
+brew install yarn
 
 # python
 brew install pyenv
