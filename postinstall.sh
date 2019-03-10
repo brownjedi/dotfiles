@@ -24,37 +24,37 @@ fi
 
 ZSH_CUSTOM_PLUGINS_PATH=$ZSH_CUSTOM/plugins
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm ]; then
 	git clone https://github.com/lukechilds/zsh-nvm.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm pull
 fi
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions ]; then
 	git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions pull
 fi
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting ]; then
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting pull
 fi
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search ]; then
 	git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search pull
 fi
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word ]; then
 	git clone https://github.com/zdharma/history-search-multi-word.git ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word pull
 fi
 
-if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop ]; then
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop ]; then
 	git clone https://github.com/Valiev/almostontop.git ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop pull
