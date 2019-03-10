@@ -9,12 +9,13 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude "bootstrap.sh" \
 		--exclude "brew.sh" \
+    --exclude "fresh-install.sh" \
 		--exclude "LICENSE-MIT.txt" \
+    --exclude "oh-my-zsh.sh" \
 		--exclude "osx.sh" \
 		--exclude "postinstall.sh" \
 		--exclude "README.md" \
 		-avh --no-perms . ~;
-	env zsh -l;
 	source ~/.zshrc;
 }
 
