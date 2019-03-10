@@ -29,6 +29,7 @@ brew install moreutils
 brew install findutils
 # Install zsh.
 brew install zsh
+brew install zsh-completions
 
 # Switch to using brew-installed zsh as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/zsh" /etc/shells; then
