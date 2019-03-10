@@ -116,5 +116,10 @@ brew cask install spotify
 brew cask install whatsapp
 brew cask install signal
 
+# Open the app so the preference files get initialized
+open -g "/Applications/iTerm.app" && sleep 2
+
+sleep 2 && osascript -e 'quit app "iTerm"'
+
 # Remove outdated versions from the cellar.
 brew cleanup

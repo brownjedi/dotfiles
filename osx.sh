@@ -244,7 +244,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 ###############################################################################
 
 # Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 64
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "genie"
@@ -483,14 +483,6 @@ sudo mdutil -E / > /dev/null
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
-# Open the app so the preference files get initialized
-open -g "/Applications/iTerm.app" && sleep 2
-
-# Enable warning when quitting
-defaults write com.googlecode.iterm2 PromptOnQuit -bool true
-
-sleep 2 && osascript -e 'quit app "iTerm"'
-
 # set the custom preferences folder
 defaults write com.googlecode.iterm2 PrefsCustomFolder ~/.dotfiles-defaults/iterm2
 
@@ -619,8 +611,6 @@ for app in "Activity Monitor" \
 	"Photos" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
-	"iTerm" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done

@@ -11,3 +11,6 @@ source ./bootstrap.sh
 
 # post install actions
 source ./postinstall.sh
+
+# install custom osx defaults
+source ./osx.sh
