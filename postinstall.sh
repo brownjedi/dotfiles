@@ -45,6 +45,11 @@ if test $(command -v nvm); then
 	nvm alias default node
 fi
 
+
+# Python from pyenv
+if which pyenv > /dev/null; then
+	eval "$(pyenv init -)";
+fi
 # install node via pyenv
 if test $(command -v pyenv); then
 	echo "Installing python 2 and python 3"
