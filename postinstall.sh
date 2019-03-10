@@ -18,12 +18,46 @@ if [ ! -d "$ZSH" ]; then
 fi
 
 # install zsh plugins
-git clone https://github.com/lukechilds/zsh-nvm ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-nvm
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
-git clone https://github.com/zdharma/history-search-multi-word ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/history-search-multi-word
-git clone https://github.com/Valiev/almostontop.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/almostontop
+if [ ! -n "$ZSH_CUSTOM" ]; then
+	ZSH_CUSTOM=~/.oh-my-zsh/custom
+	ZSH_CUSTOM_PLUGINS_PATH=$ZSH_CUSTOM/plugins
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm ]; then
+	git clone https://github.com/lukechilds/zsh-nvm.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-nvm pull
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions ]; then
+	git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-autosuggestions pull
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting ]; then
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-syntax-highlighting pull
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search ]; then
+	git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search pull
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word ]; then
+	git clone https://github.com/zdharma/history-search-multi-word.git ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word pull
+fi
+
+if [! -d ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop ]; then
+	git clone https://github.com/Valiev/almostontop.git ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop pull
+fi
 
 # install tpm plugin manager
 if [ ! -d ${HOME}/.tmux/plugins/tpm ]; then
