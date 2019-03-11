@@ -33,3 +33,9 @@ if test $(command -v pyenv); then
 	pyenv install 3.7.0
 	pyenv global 2.7.10 3.7.0
 fi
+
+pip install --upgrade setuptools wheel pip
+pip3 install --upgrade setuptools wheel pip3
+
+# we need this to enable ccat (colorize plugin of oh-my-zsh)
+pip install Pygments

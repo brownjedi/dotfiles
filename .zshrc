@@ -29,25 +29,26 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	zsh-history-substring-search
-	history-search-multi-word
-	colored-man-pages
-	command-not-found
-	chucknorris
-	git
-	git-extras
-	git-flow
-	gitignore
-	brew
-	docker
-	tmux
-	thefuck
-	zsh-nvm
-	npm
-	yarn
-	golang
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+  history-search-multi-word
+  colorize
+  colored-man-pages
+  command-not-found
+  chucknorris
+  git
+  git-extras
+  git-flow
+  gitignore
+  brew
+  docker
+  tmux
+  thefuck
+  zsh-nvm
+  npm
+  yarn
+  golang
 )
 
 # User configuration
