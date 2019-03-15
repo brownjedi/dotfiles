@@ -116,5 +116,8 @@ brew cask install spotify
 brew cask install whatsapp
 brew cask install signal
 
+# this apps helps select retina enabled resolution (pixel doubling)
+brew cask install avibrazil-rdm
+
 # Remove outdated versions from the cellar.
 brew cleanup
