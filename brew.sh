@@ -116,6 +116,8 @@ brew cask install spotify
 brew cask install whatsapp
 brew cask install signal
 brew cask install 1password
+brew cask install firefox
+brew cask install google-chrome
 
 # this apps helps select retina enabled resolution (pixel doubling)
 brew cask install avibrazil-rdm
