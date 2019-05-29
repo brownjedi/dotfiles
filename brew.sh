@@ -115,6 +115,7 @@ brew cask install vlc
 brew cask install spotify
 brew cask install whatsapp
 brew cask install signal
+brew cask install 1password
 
 # this apps helps select retina enabled resolution (pixel doubling)
 brew cask install avibrazil-rdm
