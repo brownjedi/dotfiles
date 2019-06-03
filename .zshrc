@@ -9,6 +9,14 @@ export GOPATH="$HOME/go"
 
 export PATH=$HOME/bin:$GOPATH/bin:/usr/local/sbin:$PATH
 
+# Android
+# export ANDROID_HOME=~/Library/Android/sdk
+# export ANDROID_SDK_ROOT=${ANDROID_HOME}
+# export ANDROID_AVD_HOME=~/.android/avd
+# export PATH=${PATH}:${ANDROID_HOME}/tools
+# export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
