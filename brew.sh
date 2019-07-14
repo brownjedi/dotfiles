@@ -60,7 +60,7 @@ brew install ack
 #brew install exiv2
 brew install git
 brew install git-lfs
-brew install git-flow
+brew install git-flow-avh
 brew install git-extras
 brew install diff-so-fancy
 brew install imagemagick

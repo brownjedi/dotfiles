@@ -47,7 +47,7 @@ plugins=(
   chucknorris
   git
   git-extras
-  git-flow
+  git-flow-avh
   gitignore
   brew
   docker
