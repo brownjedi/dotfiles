@@ -80,6 +80,7 @@ brew install libvpx
 brew install fortune
 brew install cowthink
 brew install ffmpeg
+brew install emojify
 
 
 # install programming env
