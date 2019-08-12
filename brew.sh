@@ -81,6 +81,7 @@ brew install fortune
 brew install cowthink
 brew install ffmpeg
 brew install emojify
+brew install watch
 
 
 # install programming env
