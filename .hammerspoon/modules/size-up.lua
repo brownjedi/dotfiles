@@ -86,6 +86,51 @@ local function moveWindowToRight(window)
     window:setFrame(frame, 0)
 end
 
+
+local function moveWindowToOneFourthPositionOne(window)
+    local frame, screen = getWindowProperties(window)
+    local max = screen:frame()
+
+    frame.x = max.x
+    frame.y = max.y
+    frame.w = max.w / 4
+    frame.h = max.h
+    window:setFrame(frame, 0)
+end
+
+local function moveWindowToOneFourthPositionTwo(window)
+    local frame, screen = getWindowProperties(window)
+    local max = screen:frame()
+
+    frame.x = max.x + (max.w / 4)
+    frame.y = max.y
+    frame.w = max.w / 4
+    frame.h = max.h
+    window:setFrame(frame, 0)
+end
+
+local function moveWindowToOneFourthPositionThree(window)
+    local frame, screen = getWindowProperties(window)
+    local max = screen:frame()
+
+    frame.x = max.x + (max.w / 2)
+    frame.y = max.y
+    frame.w = max.w / 4
+    frame.h = max.h
+    window:setFrame(frame, 0)
+end
+
+local function moveWindowToOneFourthPositionFour(window)
+    local frame, screen = getWindowProperties(window)
+    local max = screen:frame()
+
+    frame.x = max.x + (3 * max.w / 4)
+    frame.y = max.y
+    frame.w = max.w / 4
+    frame.h = max.h
+    window:setFrame(frame, 0)
+end
+
 local function moveWindowToUp(window)
     local frame, screen = getWindowProperties(window)
     local max = screen:frame()
@@ -113,9 +158,9 @@ local function moveWindowToCenter(window)
     local max = screen:frame()
 
     frame.x = max.x + (max.w / 4)
-    frame.y = max.y + (max.h / 4)
+    frame.y = max.y
     frame.w = max.w / 2
-    frame.h = max.h / 2
+    frame.h = max.h
     window:setFrame(frame, 0)
 end
 
@@ -201,6 +246,36 @@ local function module_init()
         moveWindowToCenter(hs.window.focusedWindow())
     end)
 
+    --  1/4th Left
+    bind({"cmd", "alt", "ctrl"}, "X", function()
+        moveWindowToOneFourthPositionOne(hs.window.focusedWindow())
+    end)
+
+    -- 1/4th Right
+    bind({"cmd", "alt", "ctrl"}, "V", function()
+        moveWindowToOneFourthPositionFour(hs.window.focusedWindow())
+    end)
+
+    -- 1/4 postion 1
+    bind({"cmd", "alt", "ctrl"}, "1", function()
+        moveWindowToOneFourthPositionOne(hs.window.focusedWindow())
+    end)
+
+    -- 1/4 postion 2
+    bind({"cmd", "alt", "ctrl"}, "2", function()
+        moveWindowToOneFourthPositionTwo(hs.window.focusedWindow())
+    end)
+
+    -- 1/4 postion 3
+    bind({"cmd", "alt", "ctrl"}, "3", function()
+        moveWindowToOneFourthPositionThree(hs.window.focusedWindow())
+    end)
+
+    -- 1/4 postion 4
+    bind({"cmd", "alt", "ctrl"}, "4", function()
+        moveWindowToOneFourthPositionFour(hs.window.focusedWindow())
+    end)
+
     -- Left all in the current screen
     bind({"cmd", "alt", "ctrl", "shift"}, "Left", function()
         local visibleWindows = getAllVisibleWindowsInMainScreen()
@@ -238,6 +313,30 @@ local function module_init()
         local visibleWindows = getAllVisibleWindowsInMainScreen()
         for i, visibleWindow in ipairs(visibleWindows) do
             maximizeWindow(visibleWindow)
+        end
+    end)
+
+    -- Center all in the current screen
+    bind({"cmd", "alt", "ctrl", "shift"}, "C", function()
+        local visibleWindows = getAllVisibleWindowsInMainScreen()
+        for i, visibleWindow in ipairs(visibleWindows) do
+            moveWindowToCenter(visibleWindow)
+        end
+    end)
+
+    -- 1/4th postion 1 all in the current screen
+    bind({"cmd", "alt", "ctrl", "shift"}, "X", function()
+        local visibleWindows = getAllVisibleWindowsInMainScreen()
+        for i, visibleWindow in ipairs(visibleWindows) do
+            moveWindowToOneFourthPositionOne(visibleWindow)
+        end
+    end)
+
+    --  1/4th postion 4 all in the current screen
+    bind({"cmd", "alt", "ctrl", "shift"}, "V", function()
+        local visibleWindows = getAllVisibleWindowsInMainScreen()
+        for i, visibleWindow in ipairs(visibleWindows) do
+            moveWindowToOneFourthPositionFour(visibleWindow)
         end
     end)
 
