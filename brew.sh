@@ -102,7 +102,7 @@ brew install pipenv
 brew cask install qlcolorcode quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fonts
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 brew cask install font-fira-code
 
 # install apps
