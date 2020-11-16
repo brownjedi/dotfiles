@@ -25,9 +25,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
@@ -95,13 +92,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 #sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
 
 ###############################################################################
-# SSD-specific tweaks                                                         #
-###############################################################################
-
-# Disable hibernation (speeds up entering sleep mode)
-sudo pmset -a hibernatemode 0
-
-###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
@@ -125,7 +115,7 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
+launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Screen                                                                      #
@@ -423,6 +413,84 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
+
+###############################################################################
+# Amethyst                                                                    #
+###############################################################################
+
+# Set windows to always stay in floating mode
+defaults write com.amethyst.Amethyst.plist floating '(
+        {
+       id = "com.apple.systempreferences";
+       "window-titles" =         (
+       );
+   },
+       {
+       id = "com.cisco.anyconnect.gui";
+       "window-titles" =         (
+       );
+   },
+       {
+       id = "com.cisco.webexmeetingsapp";
+       "window-titles" =         (
+       );
+   },
+       {
+       id = "com.apple.ActivityMonitor";
+       "window-titles" =         (
+       );
+   },
+       {
+       id = "com.googlecode.iterm2";
+       "window-titles" =         (
+       );
+   }
+)'
+defaults write com.amethyst.Amethyst.plist floating-is-blacklist 1
+
+# Float small windows
+defaults write com.amethyst.Amethyst.plist float-small-windows 1
+
+# Disable Focus follows mouse
+defaults write com.amethyst.Amethyst.plist focus-follows-mouse 0
+
+# Follow window when moved to different workspace
+defaults write com.amethyst.Amethyst.plist follow-space-thrown-windows 1
+
+# Configure layouts
+defaults write com.amethyst.Amethyst.plist layouts '(
+	"middle-wide",
+  "widescreen-tall",
+  tall,
+  wide,
+  fullscreen,
+  column,
+  bsp
+)'
+
+defaults write com.amethyst.Amethyst.plist mouse-follows-focus 0
+defaults write com.amethyst.Amethyst.plist mouse-resizes-windows 1
+defaults write com.amethyst.Amethyst.plist mouse-swaps-windows 1
+defaults write com.amethyst.Amethyst.plist new-windows-to-main 0
+defaults write com.amethyst.Amethyst.plist window-resize-step 5
+
+# Restore layouts when application starts
+defaults write com.amethyst.Amethyst.plist restore-layouts-on-launch 1
+
+# Set window margins
+defaults write com.amethyst.Amethyst.plist window-margins 1
+defaults write com.amethyst.Amethyst.plist window-margin-size 10
+
+# Do not display layout names
+defaults write com.amethyst.Amethyst.plist enables-layout-hud 0
+defaults write com.amethyst.Amethyst.plist enables-layout-hud-on-space-change 0
+
+# Disable automatic update check as it is done by Homebrew
+defaults write com.amethyst.Amethyst.plist SUEnableAutomaticChecks 0
+
+# Delete the plist cache - MUST ALWAYS BE LAST
+defaults read com.amethyst.Amethyst.plist > /dev/null 2>&1
+
 
 ###############################################################################
 # Spotlight                                                                   #

@@ -99,7 +99,7 @@ brew install pyenv-virtualenvwrapper
 brew install pipenv
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install qlcolorcode quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
 
 # install fonts
 brew tap caskroom/fonts
@@ -120,9 +120,14 @@ brew cask install signal
 brew cask install 1password
 brew cask install firefox
 brew cask install google-chrome
-
+brew cask install amethyst
+brew cask install monitorcontrol
+brew cask install logitech-g-hub
 # this apps helps select retina enabled resolution (pixel doubling)
 brew cask install avibrazil-rdm
+
+# install kustomize/helm
+brew install kustomize helm
 
 # Remove outdated versions from the cellar.
 brew cleanup
