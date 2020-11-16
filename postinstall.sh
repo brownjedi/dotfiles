@@ -29,8 +29,8 @@ fi
 # install node via pyenv
 if test $(command -v pyenv); then
 	echo "Installing python 2 and python 3"
-	pyenv install 2.7.18
-	pyenv install 3.9.0
+	LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install 2.7.18
+	LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install 3.9.0
 	pyenv global 2.7.18 3.9.0
 fi
 
