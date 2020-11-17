@@ -127,7 +127,9 @@ brew cask install logitech-g-hub
 brew cask install avibrazil-rdm
 
 # install kustomize/helm
-brew install kustomize helm
+brew install kustomize
+brew install helm
+brew install tilt-dev/tap/tilt
 
 # Remove outdated versions from the cellar.
 brew cleanup
