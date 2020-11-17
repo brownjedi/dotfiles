@@ -17,8 +17,6 @@ if [ ! -d "$ZSH" ]; then
 
   # remove echo and env zsh so that we can do a silent install
   curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o ${HOME}/.omz_tmp.sh
-  sed -i ''  '/echo/d' ${HOME}/.omz_tmp.sh
-  sed -i ''  '/env zsh/d' ${HOME}/.omz_tmp.sh
   sh ${HOME}/.omz_tmp.sh
   rm ${HOME}/.omz_tmp.sh
 fi
