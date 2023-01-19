@@ -52,10 +52,10 @@ else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/zsh-history-substring-search pull
 fi
 
-if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word ]; then
-	git clone https://github.com/zdharma/history-search-multi-word.git ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/H-S-MW ]; then
+	git clone https://github.com/z-shell/H-S-MW.git ${ZSH_CUSTOM_PLUGINS_PATH}/H-S-MW
 else
-	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/history-search-multi-word pull
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/H-S-MW pull
 fi
 
 if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop ]; then
