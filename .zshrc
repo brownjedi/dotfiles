@@ -40,7 +40,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  history-search-multi-word
+  H-S-MW
   colorize
   colored-man-pages
   command-not-found
