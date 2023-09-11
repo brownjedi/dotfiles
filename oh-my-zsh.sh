@@ -63,3 +63,9 @@ if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop ]; then
 else
 	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/almostontop pull
 fi
+
+if [ ! -d ${ZSH_CUSTOM_PLUGINS_PATH}/catppuccin-zsh-syntax-highlighting ]; then
+	git clone https://github.com/catppuccin/zsh-syntax-highlighting.git ${ZSH_CUSTOM_PLUGINS_PATH}/catppuccin-zsh-syntax-highlighting
+else
+	git -C ${ZSH_CUSTOM_PLUGINS_PATH}/catppuccin-zsh-syntax-highlighting pull
+fi

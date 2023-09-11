@@ -8,9 +8,6 @@ if [ ! -d ${HOME}/.tmux/plugins/tpm ]; then
 	${HOME}/.tmux/plugins/tpm/bin/install_plugins
 fi
 
-# install all vim plugins in .vimrc
-vim +PlugInstall +qall
-
 # install node via nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
@@ -21,17 +18,15 @@ if test $(command -v nvm); then
 	nvm alias default node
 fi
 
-
 # Python from pyenv
 if which pyenv > /dev/null; then
 	eval "$(pyenv init -)";
 fi
 # install node via pyenv
 if test $(command -v pyenv); then
-	echo "Installing python 2 and python 3"
-	LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install 2.7.18
-	LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install 3.9.0
-	pyenv global 2.7.18 3.9.0
+	echo "Installing python 3"
+	LDFLAGS="-L$(xcrun --show-sdk-path)/usr/lib" pyenv install 3.11.4
+	pyenv global 3.11.4
 fi
 
 pip install --upgrade setuptools wheel pip

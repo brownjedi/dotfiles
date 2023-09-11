@@ -1,13 +1,16 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# need this to hide prompt in agnoster theme
+export DEFAULT_USER="$(whoami)"
+
 # Default GOPATH
 export GOPATH="$HOME/go"
 
 # export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export PATH=$HOME/bin:$GOPATH/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$GOPATH/bin:/usr/local/sbin:$PATH
 
 # Android
 # export ANDROID_HOME=~/Library/Android/sdk
@@ -25,11 +28,15 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+# source this file before loading zsh-syntax-highlighting plugin
+source $ZSH/custom/plugins/catppuccin-zsh-syntax-highlighting/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="custom-agnoster"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -37,19 +44,24 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 
 plugins=(
+  brew
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
-  H-S-MW
+  aliases
   colorize
   colored-man-pages
   command-not-found
   chucknorris
+  fzf
+  # keep zsh-interactive-cd after fzf since it's dependent on that
+  zsh-interactive-cd
+  # ensure H-S-MW is after fzf else fzf will overwrite CTRL + R binding
+  H-S-MW
+  gh
   git
-  git-extras
-  git-flow-avh
   gitignore
-  brew
+  extract
   docker
   tmux
   thefuck
@@ -57,7 +69,10 @@ plugins=(
   npm
   yarn
   golang
+  terraform
+  zoxide
 )
+
 
 # User configuration
 source $ZSH/custom/plugins/almostontop/almostontop.plugin.zsh
@@ -96,4 +111,12 @@ if which pyenv > /dev/null; then
 	pyenv virtualenvwrapper_lazy
 fi
 
+# Python from pyenv
+if which pyenv > /dev/null; then
+	eval "$(pyenv init -)";
+	pyenv virtualenvwrapper_lazy
+fi
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(direnv hook zsh)"

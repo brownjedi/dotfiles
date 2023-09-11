@@ -261,14 +261,17 @@ defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
 defaults write com.apple.dock autohide-time-modifier -float 0
 
-# Don't Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool false
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
 # Don't show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+# Do not re-order spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
 
 # Disable the Launchpad gesture (pinch with thumb and three fingers)
 #defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
@@ -413,84 +416,6 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
-
-###############################################################################
-# Amethyst                                                                    #
-###############################################################################
-
-# Set windows to always stay in floating mode
-defaults write com.amethyst.Amethyst.plist floating '(
-        {
-       id = "com.apple.systempreferences";
-       "window-titles" =         (
-       );
-   },
-       {
-       id = "com.cisco.anyconnect.gui";
-       "window-titles" =         (
-       );
-   },
-       {
-       id = "com.cisco.webexmeetingsapp";
-       "window-titles" =         (
-       );
-   },
-       {
-       id = "com.apple.ActivityMonitor";
-       "window-titles" =         (
-       );
-   },
-       {
-       id = "com.googlecode.iterm2";
-       "window-titles" =         (
-       );
-   }
-)'
-defaults write com.amethyst.Amethyst.plist floating-is-blacklist 1
-
-# Float small windows
-defaults write com.amethyst.Amethyst.plist float-small-windows 1
-
-# Disable Focus follows mouse
-defaults write com.amethyst.Amethyst.plist focus-follows-mouse 0
-
-# Follow window when moved to different workspace
-defaults write com.amethyst.Amethyst.plist follow-space-thrown-windows 1
-
-# Configure layouts
-defaults write com.amethyst.Amethyst.plist layouts '(
-	"middle-wide",
-  "widescreen-tall",
-  tall,
-  wide,
-  fullscreen,
-  column,
-  bsp
-)'
-
-defaults write com.amethyst.Amethyst.plist mouse-follows-focus 0
-defaults write com.amethyst.Amethyst.plist mouse-resizes-windows 1
-defaults write com.amethyst.Amethyst.plist mouse-swaps-windows 1
-defaults write com.amethyst.Amethyst.plist new-windows-to-main 0
-defaults write com.amethyst.Amethyst.plist window-resize-step 5
-
-# Restore layouts when application starts
-defaults write com.amethyst.Amethyst.plist restore-layouts-on-launch 1
-
-# Set window margins
-defaults write com.amethyst.Amethyst.plist window-margins 1
-defaults write com.amethyst.Amethyst.plist window-margin-size 10
-
-# Do not display layout names
-defaults write com.amethyst.Amethyst.plist enables-layout-hud 0
-defaults write com.amethyst.Amethyst.plist enables-layout-hud-on-space-change 0
-
-# Disable automatic update check as it is done by Homebrew
-defaults write com.amethyst.Amethyst.plist SUEnableAutomaticChecks 0
-
-# Delete the plist cache - MUST ALWAYS BE LAST
-defaults read com.amethyst.Amethyst.plist > /dev/null 2>&1
-
 
 ###############################################################################
 # Spotlight                                                                   #

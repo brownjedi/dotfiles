@@ -3,6 +3,15 @@
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias dc="cd ~/Documents"
+alias dp="cd ~/Documents/personalProjects"
+alias cls="clear"
+alias hb="hub browse"
+alias vim="nvim"
+alias k="kubectl"
+
+# node
+alias yyb="yarn && yarn build"
 
 # Always enable colored `grep` output
 # Note: `GREP_OPTIONS="--color=auto"` is deprecated, hence the alias usage.

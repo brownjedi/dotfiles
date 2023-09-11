@@ -44,10 +44,9 @@ brew install wget
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim
+brew install neovim
 brew install grep
 brew install openssh
-brew install screen
 brew install rsync
 brew install reattach-to-user-namespace
 
@@ -58,31 +57,30 @@ brew install sqlmap
 # Install other useful binaries.
 brew install ack
 #brew install exiv2
+brew install lazygit
 brew install git
 brew install git-lfs
-brew install git-flow-avh
 brew install git-extras
 brew install diff-so-fancy
 brew install imagemagick
 brew install lua
-brew install pv
-brew install rename
-brew install rlwrap
 brew install ssh-copy-id
 brew install tree
-brew install vbindiff
 brew install zopfli
 brew install tmux
 brew install lolcat
 brew install thefuck
-brew install ctags
 brew install libvpx
 brew install fortune
 brew install cowthink
 brew install ffmpeg
-brew install emojify
 brew install watch
+brew install hub
+brew install direnv
 
+# install tiling manager
+brew install koekeishiya/formulae/yabai
+brew install koekeishiya/formulae/skhd
 
 # install programming env
 
@@ -94,42 +92,36 @@ brew install nvm
 brew install yarn
 
 # python
+brew install openssl readline sqlite3 xz zlib # dependencies for building python
 brew install pyenv
 brew install pyenv-virtualenvwrapper
 brew install pipenv
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode quicklook-json qlprettypatch quicklook-csv betterzip qlimagesize webpquicklook suspicious-package quicklookase qlvideo
+brew cask install qlcolorcode qlstephen quicklook-json qlmarkdown quicklook-csv qlimagesize webpquicklook suspicious-package apparency qlvideo
 
 # install fonts
 brew tap homebrew/cask-fonts
-brew cask install font-fira-code
+brew install --cask font-fira-code-nerd-font font-fira-mono-nerd-font
 
 # install apps
-brew cask install iterm2
-brew cask install hammerspoon
-brew cask install visual-studio-code
-brew cask install typora
-brew cask install omnidisksweeper
-brew cask install postman
-brew cask install docker
-brew cask install vlc
-brew cask install spotify
-brew cask install whatsapp
-brew cask install signal
-brew cask install 1password
-brew cask install firefox
-brew cask install google-chrome
-brew cask install amethyst
-brew cask install monitorcontrol
-brew cask install logitech-g-hub
+brew install --cask iterm2
+brew install --cask visual-studio-code
+brew install --cask omnidisksweeper
+brew install --cask postman
+brew install --cask vlc
+brew install --cask rancher
+brew install --cask spotify
+brew install --cask whatsapp
+brew install --cask signal
+brew install --cask firefox
+brew install --cask google-chrome
+brew install --cask logitech-g-hub
 # this apps helps select retina enabled resolution (pixel doubling)
-brew cask install avibrazil-rdm
+brew install --cask betterdisplay
 
 # install kustomize/helm
-brew install kustomize
 brew install helm
-brew install tilt-dev/tap/tilt
 
 # Remove outdated versions from the cellar.
 brew cleanup
