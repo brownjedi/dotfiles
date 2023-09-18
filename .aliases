@@ -9,6 +9,7 @@ alias cls="clear"
 alias hb="hub browse"
 alias vim="nvim"
 alias k="kubectl"
+alias cat="bat"
 
 # node
 alias yyb="yarn && yarn build"

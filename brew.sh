@@ -77,6 +77,7 @@ brew install ffmpeg
 brew install watch
 brew install hub
 brew install direnv
+brew install bat
 
 # install tiling manager
 brew install koekeishiya/formulae/yabai
